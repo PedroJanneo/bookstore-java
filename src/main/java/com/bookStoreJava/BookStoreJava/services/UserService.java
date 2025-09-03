@@ -1,8 +1,8 @@
 package com.bookStoreJava.BookStoreJava.services;
 
-import com.bookStoreJava.BookStoreJava.entities.Book;
 import com.bookStoreJava.BookStoreJava.entities.User;
 import com.bookStoreJava.BookStoreJava.repositories.UserRepository;
+import com.bookStoreJava.BookStoreJava.security.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +16,8 @@ public class UserService {
 
 
     public User save(User user){
+        String hash = PasswordHash.hash(user.getPassword());
+        user.setPassword(hash);
         return userRepository.save(user);
     }
 

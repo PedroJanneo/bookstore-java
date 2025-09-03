@@ -19,16 +19,16 @@ public class User {
 
     private String name;
     private String email;
-    private String passoword;
+    private String password;
 
     public User() {
     }
 
-    public User(long id, String name, String email, String passoword) {
+    public User(long id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.passoword = passoword;
+        this.password = password;
     }
 
     public long getId() {
@@ -55,12 +55,12 @@ public class User {
         this.email = email;
     }
 
-    public String getPassoword() {
-        return passoword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassoword(String passoword) {
-        this.passoword = passoword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
