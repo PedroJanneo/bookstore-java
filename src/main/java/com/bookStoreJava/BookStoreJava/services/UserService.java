@@ -29,4 +29,12 @@ public class UserService {
         User result = userRepository.findById(id).get();
         return result;
     }
+
+    public void  deleteUser(Long id){
+        if (!userRepository.existsById(id)){
+            throw new RuntimeException("Usuario não encontrado, verifique se o ID: " + id + " está correto");
+        }
+        userRepository.deleteById(id);
+    }
+
 }

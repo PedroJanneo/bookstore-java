@@ -2,10 +2,10 @@ package com.bookStoreJava.BookStoreJava.controllers;
 
 
 import com.bookStoreJava.BookStoreJava.entities.Book;
-import com.bookStoreJava.BookStoreJava.entities.User;
 import com.bookStoreJava.BookStoreJava.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,4 +41,13 @@ public class BookController {
         return ResponseEntity.ok(savedBook);
     }
 
-}
+    @DeleteMapping("/{id}")
+        public ResponseEntity<Void> deleteBook(@PathVariable Long id){
+            bookService.deleteBook(id);
+            return ResponseEntity.noContent().build();
+        }
+
+
+    }
+
+

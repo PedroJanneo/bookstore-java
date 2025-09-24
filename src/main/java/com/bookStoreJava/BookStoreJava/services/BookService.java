@@ -5,6 +5,7 @@ import com.bookStoreJava.BookStoreJava.entities.Book;
 import com.bookStoreJava.BookStoreJava.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,6 +27,13 @@ public class BookService {
     public Book findByID(Long id){
         Book result = bookRepository.findById(id).get();
         return result;
+    }
+
+    public void deleteBook(Long id){
+        if (!bookRepository.existsById(id)){
+            throw new RuntimeException("Livro não encontrado, verifique se o ID: " + id + " está correto");
+        }
+        bookRepository.deleteById(id);
     }
 }
 
