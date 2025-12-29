@@ -1,63 +1,37 @@
 # BookStoreJava
 
-BookStoreJava é um projeto de gerenciamento de livraria originalmente desenvolvido em Node.js e Express. Atualmente, está sendo migrado para Java utilizando o framework Spring Boot.
+BookStoreJava é um projeto de gerenciamento de livraria. Foi originalmente desenvolvido em Node.js/Express e migrado para Java com Spring Boot para aprofundar conhecimentos na linguagem e nas boas práticas do ecossistema Java.
 
 ## Objetivo
 
-O objetivo do projeto é fornecer uma API para cadastro, consulta e autenticação de usuários e livros, utilizando persistência em banco de dados MySQL, além de aprimorar meus conhecimentos em lógica de programação e adaptação de linguagem.
+Fornecer uma API REST para cadastro, consulta e autenticação de usuários e livros, com persistência em MySQL, além de servir como estudo prático de Spring Boot, JPA e segurança básica (hash de senhas).
 
-## Tecnologias Utilizadas
+## Tecnologias
 
-- **Java 21**
-- **Spring Boot** 
-- **MySQL** 
-- **JPA/Hibernate** 
-- **BCrypt** (hash de senha)
+- Java 21
+- Spring Boot
+- MySQL
+- JPA / Hibernate
+- BCrypt (hash de senha)
 
-## Estrutura do Projeto
+## Requisitos
 
-- `entities/Book.java`  
-  Entidade que representa um livro.
+- Java 21
+- Maven (wrapper incluído)
+- MySQL em execução
 
-- `entities/User.java`  
-  Entidade que representa um usuário.
 
-- `repositories/BookRepository.java`  
-  Interface de acesso ao banco para livros.
+## Endpoints principais (exemplos)
 
-- `repositories/UserRepository.java`  
-  Interface de acesso ao banco para usuários.
+- Listar livros (GET):
 
-- `services/BookService.java`  
-  Serviço para regras de negócio de livros.
+- ```http://localhost:8080/books ```
 
-- `services/UserService.java`  
-  Serviço para regras de negócio de usuários, incluindo hash de senha.
+- Listar usuarios (GET):
+- ```http://localhost:8080/users ```
 
-- `controllers/BookController.java`  
-  Controller REST para livros.
 
-- `controllers/UserController.java`  
-  Controller REST para usuários.
+## Contribuição
 
-- `security/PasswordHash.java`  
-  Utilitário para hash e verificação de senha com BCrypt.
+Contribuições são bem-vindas: abra issues para bugs/feature requests ou envie pull requests com mudanças claras e testes quando aplicável.
 
-- `resources/application.properties`  
-  Configuração de acesso ao banco de dados.
-
-## Como Executar
-
-1. Configure o banco de dados MySQL e ajuste o arquivo `application.properties`.
-2. Execute o projeto com Maven:
-   ```sh
-   ./mvnw spring-boot:run
-   ```
-3. Acesse os endpoints REST:
-   - `/books` para operações com livros
-   - `/users` para operações com usuários
-
-## Observações
-
-- O projeto está em fase de migração de Node.js/Express para Java/Spring Boot.
-- Algumas funcionalidades podem estar
